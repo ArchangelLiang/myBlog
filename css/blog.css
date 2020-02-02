@@ -10,6 +10,7 @@ body {
 }
 .my-nav {
 	border-radius: 0 !important;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 @media screen and (max-width: 991px) {
 	body {
@@ -67,4 +68,10 @@ li {
 .my-blog-explain {
 	color: #888888;
 }
-
+.my-leave-msg {
+	padding: 0;
+}
+.my-leave-msg li {
+	border-bottom: 1px solid #CCCCCC;
+	margin-top: 5px;
+}

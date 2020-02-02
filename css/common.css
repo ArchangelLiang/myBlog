@@ -1,0 +1,16 @@
+body {
+	background-image: url(../image/main_back.png);
+	padding: 0 !important;
+}
+li {
+	list-style: none;
+}
+.my-nav {
+	border-radius: 0 !important;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+@media screen and (max-width: 991px) {
+	body {
+		font-size: 10px !important;
+	}
+}
