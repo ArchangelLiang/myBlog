@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+		<title>博客详情</title>
+		<link rel="stylesheet" href="css/normal.css">
+		<link rel="stylesheet" href="./css/blog.css" />
+		<link rel="stylesheet" media="screen and (min-width: 992px)" href="./css/common_footer.css" />
+		<link rel="stylesheet" media="screen and (max-width: 991px)" href="./css/common_footer.mobile.css" />
+		<script src="./js/jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<script src="./js/bootstrap.min.js"></script>
+	</head>
+	<body class="container-fluid">
+		<!--导航模块-->
+		<nav class="navbar navbar-inverse my-nav">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">GwgBlog</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class=""><a href="index.html">首页<span class="sr-only">(current)</span></a></li>
+						<li><a href="categories.html">分类</a></li>
+						<li><a href="total.html">归档</a></li>
+					</ul>
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="输入您感兴趣的内容">
+						</div>
+						<button type="submit" class="btn btn-default">搜索</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="me.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;关于我</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		<!--正文-->
+		<div class="row primary">
+			<div class="col-sm-12 col-md-9 my-blog">
+				<div class="col-md-12 col-sm-12 my-blog-title">
+					<strong>GwgBlog</strong>&nbsp;
+					<i class="glyphicon glyphicon-calendar"></i>&nbsp;&nbsp;<span>2020-1-12</span>
+					&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<span>199</span>
+				</div>
+				<div class="thumbnail">
+					<div class="my-blog-img-control">
+						<img class="img-rounded my-blog-img" src="./image/code.jpg" alt="...">
+					</div>
+					<div class="caption">
+						<div class="my-blog-text" style="height: 500px;">
+							<h3><span class="label label-info my-blog-mark">原创</span></h3>
+							<h1 class="text-center my-blog-text-title">论阅读源码的重要性</h1>
+							<p>
+								内容
+							</p>
+						</div>
+						<div class="my-give-money">
+							<button type="button" id="money-btn" class="center-block btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">打赏</button>
+						</div>
+					</div>
+					<div class="panel panel-success my-blog-explain">
+						<!-- Default panel contents -->
+						<div class="panel-heading">博客说明</div>
+						<div class="panel-body">
+							<p>以上内容均为个人理解，如有错误欢迎指正</p>
+						</div>
+						<ul style="line-height: 30px;">
+							<li>作者：Archangel</li>
+							<li>发表时间：<span>2020-01-20</span></li>
+							<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
+							<li>联系作者：微信手机同号：15821007571</li>
+						</ul>
+					</div>
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							留言
+						</div>
+						<div class="panel-body">
+							<!-- 此处用来留言 -->
+							<textarea class="form-control my-comment" placeholder="在此输入评论信息" style="resize: none;" rows="3"></textarea>
+							<form class="form-inline" style="margin-top: 20px;margin-bottom: 20px;">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="请输入您的姓名">
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control" placeholder="请输入您的邮箱">
+								</div>
+								<button type="button" class="btn btn-info">评论</button>
+							</form>
+							<!-- 历史留言列表 -->
+							<ul class="my-leave-msg">
+								<li>
+									<p><span>小明</span>: &nbsp;<span style="color: #5E5E5E;">写的不孬，值得推荐；</span></p>
+								</li>
+								<li>
+									<p><span>小王</span>: &nbsp;<span style="color: #5E5E5E;">写的不孬，值得推荐；</span></p>
+								</li>
+								<li>
+									<p><span>小花</span>: &nbsp;<span style="color: #5E5E5E;">写的不孬，值得推荐；</span></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="modal fade" tabindex="-1" id="myModal" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">谢谢打赏</h4>
+					</div>
+					<div class="modal-body">
+						<div class="row text-center">
+							<div class="clearfix" style="display: inline-block;">
+								<div class="" style="width: 200px;float: left;margin-right: 10px;">
+									<img src="./image/my-zfb.png" style="width: 100%;" alt="..." class="img-thumbnail">
+									<h4 class="text-center">支付宝</h4>
+								</div>
+								<div class="" style="width: 200px;float: left;margin-left: 10px;">
+									<img src="./image/my-wx.png" style="width: 100%;" alt="..." class="img-thumbnail">
+									<h4 class="text-center">微信</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<!-- 页脚 -->
+		<footer class="row">
+			<div class="footer-top row">
+				<div class="footer-top-p">
+					<div class="footer-one col-md-3 col-sm-12">
+						<p class="col-sm-4 col-md-12">互联网时代</p>
+						<p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+						<p class="col-sm-4 col-md-12">全民编程</p>
+					</div>
+					<div class="footer-two col-md-3 col-sm-12">
+						<p class="col-sm-4 col-md-12">编程之道</p>
+						<p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+						<p class="col-sm-4 col-md-12">全民编程</p>
+					</div>
+					<div class="footer-three col-md-3 col-sm-12">
+						<p class="col-sm-4 col-md-12">联系我</p>
+						<p class="col-sm-4 col-md-12">QQ：2320322504</p>
+						<p class="col-sm-4 col-md-12">邮箱：2320322504@qq.com</p>
+					</div>
+					<div class="footer-four col-md-3 col-sm-12">
+						<img src="./image/personalCode.jpg" />
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+			</div>
+		</footer>
+	</body>
+</html>

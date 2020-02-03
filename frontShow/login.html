@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>login</title>
+		<link rel="stylesheet" href="css/login.css" />
+		<script>
+			window.addEventListener("load",function () {
+		            let submit = document.querySelector('input[type="button"]');
+					var account = document.querySelector('input[type="text"]');
+					var password = document.querySelector('input[type="password"]');
+					function addBlurEvent(ele){
+						ele.addEventListener('blur',function(){
+							if (ele.value.trim() == ''){
+								ele.value = '';
+								ele.setAttribute('placeholder','不能输入为空');
+								ele.style.color='red';
+							}
+						})
+					}
+					addBlurEvent(account);
+					addBlurEvent(password);
+					account.addEventListener('focus',function(){
+							account.style.color = 'black';
+					})
+					password.addEventListener('focus',function(){
+							password.style.color = 'black';
+					})
+		            submit.addEventListener('click',function () {
+						var flag = true;
+		                if (account.value.trim() == ''){
+							flag = false;
+						}
+						if (password.value.trim() == '') {
+							flag = false;
+						}
+						if (flag) {
+							document.querySelector('form').submit();
+						} else {
+							account.setAttribute('placeholder','不能输入为空');
+							account.style.color='red';
+							password.setAttribute('placeholder','不能输入为空');
+							password.style.color = 'red';
+						}
+		            })
+		        })
+		    </script>
+	</head>
+	<body>
+		<div class="pageTop"></div>
+		<div class="form">
+			<div class="lone"></div>
+			<div class="title">
+				<span>G</span>
+			</div>
+			<form action="login" method="post">
+				<input type="text" name="account" placeholder="请输入登录账号"><br />
+				<input type="password" name="password" placeholder="请输入密码"><br />
+				<input type="button" value="登录">
+				<div class="errorInfo">用户名或密码输入错误</div>
+			</form>
+			<div class="personal">
+				<span>个人博客 仅限个人登录&nbsp;&nbsp;&nbsp;&copy;GWG</span>
+			</div>
+		</div>
+		<div class="pageFloor"></div>
+		<div class="logo"><span>GWG &nbsp;&nbsp;&nbsp;BLOGS</span></div>
+	</body>
+</html>
