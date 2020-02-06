@@ -5,19 +5,20 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
     <title>博客详情</title>
-    <link rel="stylesheet" href="css/normal.css">
-    <link rel="stylesheet" href="./css/blog.css"/>
-    <link rel="stylesheet" media="screen and (min-width: 992px)" href="./css/common_footer.css"/>
-    <link rel="stylesheet" media="screen and (max-width: 991px)" href="./css/common_footer.mobile.css"/>
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="./css/typo.css">
-    <link rel="stylesheet" href="./css/prism.css">
-    <link rel="stylesheet" href="./fonts/my_icon/iconfont.css">
-	<link rel="stylesheet" href="../lib/tocbot/dist/tocbot.css">
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/prism.js"></script>
-	<script src="../lib/tocbot/dist/tocbot.min.js"></script>
+    <link rel="stylesheet" href="../static/css/normal.css">
+    <link rel="stylesheet" href="../static/css/blog.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="../static/css/common_footer.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 991px)" href="../static/css/common_footer.mobile.css"/>
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/typo.css">
+    <link rel="stylesheet" href="../static/css/prism.css">
+    <link rel="stylesheet" href="../static/fonts/my_icon/iconfont.css">
+	<link rel="stylesheet" href="../static/lib/tocbot/dist/tocbot.css">
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/prism.js"></script>
+	<script src="../static/lib/tocbot/dist/tocbot.min.js"></script>
+    <script src="../static/lib/qrcode/qrcode.min.js"></script>
     <script>
         window.onload = function () {
             let flag = true;
@@ -102,6 +103,7 @@
 				catalogue.style.display = 'none';
 				e.stopPropagation();
 			});
+			//引入目录生成插件
 			tocbot.init({
 				// Where to render the table of contents.
 				tocSelector: '.js-toc',
@@ -112,6 +114,15 @@
 				// For headings inside relative or absolute positioned containers within content.
 				hasInnerContainers: true,
 			});
+			//引入二维码生成插件
+            var qrcode = new QRCode("qrcode", {
+                text: "http://jindo.dev.naver.com/collie",
+                width: 120,
+                height: 120,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
         }
     </script>
     <style>
@@ -234,7 +245,7 @@
         </div>
         <div class="thumbnail">
             <div class="my-blog-img-control">
-                <img class="img-rounded my-blog-img" src="./image/code.jpg" alt="...">
+                <img class="img-rounded my-blog-img" src="../static/image/code.jpg" alt="...">
             </div>
             <div class="caption">
                 <div id="wrapper" class="my-blog-text typo typo-selection">
@@ -356,7 +367,7 @@
 									title="Sofish Lin, author of Typo.css"
 									role="author">我</abbr>发<a
 									href="mailto:sofish@icloud.com">邮件</a>。</p>
-					</div>>
+					</div>
                 </div>
                 <div class="my-give-money">
                     <button type="button" id="money-btn" class="center-block btn btn-danger btn-lg" data-toggle="modal"
@@ -424,11 +435,11 @@
                 <div class="row text-center">
                     <div class="clearfix" style="display: inline-block;">
                         <div class="" style="width: 200px;float: left;margin-right: 10px;">
-                            <img src="./image/my-zfb.png" style="width: 100%;" alt="..." class="img-thumbnail">
+                            <img src="../static/image/my-zfb.png" style="width: 100%;" alt="..." class="img-thumbnail">
                             <h4 class="text-center">支付宝</h4>
                         </div>
                         <div class="" style="width: 200px;float: left;margin-left: 10px;">
-                            <img src="./image/my-wx.png" style="width: 100%;" alt="..." class="img-thumbnail">
+                            <img src="../static/image/my-wx.png" style="width: 100%;" alt="..." class="img-thumbnail">
                             <h4 class="text-center">微信</h4>
                         </div>
                     </div>
@@ -450,8 +461,8 @@
 	</div>
     <li class="list-group-item my-leave-msg-btn">留言</li>
     <li class="list-group-item iconfont icon-wechat text-center my-wechat-btn"></li>
-	<div class="my-wechat-hidden">
-		<img src="./image/personalCode.jpg" class="img-rounded" style="border: 8px solid white;width: 120px;">
+	<div id="qrcode" class="my-wechat-hidden" style="padding: 7px;">
+<!--		<img src="./image/personalCode.jpg" class="img-rounded" style="border: 8px solid white;width: 120px;">-->
 	</div>
     <li class="list-group-item glyphicon glyphicon-menu-up text-center my-moveTop-btn" style="display: none;"></li>
 </ul>
@@ -475,7 +486,7 @@
                 <p class="col-sm-4 col-md-12">邮箱：2320322504@qq.com</p>
             </div>
             <div class="footer-four col-md-3 col-sm-12">
-                <img src="./image/personalCode.jpg"/>
+                <img src="../static/image/personalCode.jpg"/>
             </div>
         </div>
     </div>
